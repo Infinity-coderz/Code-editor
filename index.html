@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stylish VS Code Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-icon" onclick="toggleFileExplorer()">📁</div>
+    <div class="sidebar-icon" onclick="createNewFile()">📝</div>
+    <div class="sidebar-icon" onclick="createNewFolder()">📂</div>
+    <div class="sidebar-icon" onclick="refreshFileExplorer()">🔄</div>
+  </div>
+
+  <!-- File Explorer -->
+  <div class="file-explorer" id="fileExplorer">
+    <div class="file" onclick="openFile('index.html')">index.html</div>
+    <div class="file" onclick="openFile('style.css')">style.css</div>
+    <div class="file" onclick="openFile('script.js')">script.js</div>
+  </div>
+
+  <!-- Editor Container -->
+  <div class="editor-container">
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <button onclick="clearEditor()">Clear</button>
+      <div class="run-icon" onclick="runCode()">▶️</div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs" id="tabs"></div>
+
+    <!-- Editor with Syntax Highlighting -->
+    <div class="editor-wrapper">
+      <textarea id="editor" spellcheck="false" placeholder="Write your code here..." oninput="highlightSyntax()"></textarea>
+      <pre id="highlighting"></pre>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
